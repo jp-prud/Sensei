@@ -6,8 +6,9 @@ import defaultTheme from '../assets/styles/themes/default';
 
 import Header from '../pages/components/Header';
 import SideMenu from '../pages/components/SideMenu';
+import PageTitle from '../pages/components/PageTitle';
 
-import { Wrapper, MainContainer } from './style';
+import { Wrapper, MainContainer, Content } from './style';
 
 export default function App() {
   return (
@@ -19,7 +20,10 @@ export default function App() {
 
         <MainContainer>
           <Header />
-          <h1>bem vindo</h1>
+
+          <Content>
+            <PageTitle title="Dashboard" />
+          </Content>
         </MainContainer>
       </Wrapper>
 

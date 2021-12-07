@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <Container>
       <SearchInputContainer>
-        <input type="text" />
+        <input type="text" placeholder="Faça a sua busca" />
       </SearchInputContainer>
 
       <UserContainerConfiguration />

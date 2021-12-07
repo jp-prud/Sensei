@@ -29,4 +29,8 @@ export default createGlobalStyle`
     font-size: 1rem;
     background: ${({ theme }) => theme.colors.background}
   }
+
+  #root {
+    height: 100%;
+  }
 `;

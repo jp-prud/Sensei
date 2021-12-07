@@ -16,3 +16,7 @@ export const MainContainer = styled.main`
   flex-direction: column;
   background: ${({ theme }) => theme.colors.background};
 `;
+
+export const Content = styled.div`
+  padding: 20px;
+`;
