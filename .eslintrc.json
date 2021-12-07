@@ -22,6 +22,8 @@
       1, { "extensions": [".js", ".jsx"]}
     ],
     "linebreak-style": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/destructuring-assignment": "off",
+    "react/prop-types": "off"
   }
 }

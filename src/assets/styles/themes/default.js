@@ -5,5 +5,6 @@ export default {
     white: '#FFF',
     inputBackground: '#EFF0F6',
     placeholder: '#D6D7E3',
+    title: '#171717',
   },
 };
