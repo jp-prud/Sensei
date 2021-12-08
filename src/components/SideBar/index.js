@@ -5,6 +5,8 @@ import {
   Container, SideBarHeader, Navbar, User,
 } from './style';
 
+import Avatar from '../../assets/images/icons/avatar-sidebar.svg';
+
 export default function SideBar() {
   return (
     <Container>
@@ -27,7 +29,12 @@ export default function SideBar() {
       </Navbar>
 
       <User>
-        <span> Joao Pedro</span>
+        <img src={Avatar} alt="Avatar Icon" />
+
+        <div>
+          <span> Joao Pedro</span>
+          <span> Developer </span>
+        </div>
       </User>
     </Container>
   );

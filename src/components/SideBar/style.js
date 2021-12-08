@@ -25,4 +25,16 @@ export const Navbar = styled.div`
 `;
 
 export const User = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 10px;
+
+  img {
+    margin-right: 8px;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 `;
