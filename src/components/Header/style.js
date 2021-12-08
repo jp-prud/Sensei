@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import SearchIcon from '../../../assets/images/icons/icon-search.svg';
+import SearchIcon from '../../assets/images/icons/icon-search.svg';
 
 export const Container = styled.header`
   width: 100%;
