@@ -32,6 +32,11 @@ export default createGlobalStyle`
     color: inherit;
   }
 
+  button {
+    border: none;
+    outline: none;
+  }
+
   #root {
     height: 100%;
   }
