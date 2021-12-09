@@ -19,20 +19,16 @@ export const Container = styled.header`
     border: none;
     border-radius: 6px;
 
-    background: ${({ theme }) => theme.colors.inputBackground};
+    background:
+      url(${SearchIcon})
+      ${({ theme }) => theme.colors.inputBackground}
+      no-repeat 8px
+     ;
     color: ${({ theme }) => theme.colors.placeholder};
 
     ::placeholder {
       font: 500 14px/34px 'Inter';
       color: ${({ theme }) => theme.colors.placeholder};
-    }
-
-    :before {
-      content: "";
-      background-image: url(${SearchIcon});
-      width: 32px;
-      height: 32px;
-      display: block;
     }
   }
 `;
