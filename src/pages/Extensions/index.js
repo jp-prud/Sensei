@@ -4,6 +4,6 @@ import PageHeader from '../../components/PageHeader';
 
 export default function Extensions() {
   return (
-    <PageHeader title="Extensions" />
+    <PageHeader title="Extensões" button />
   );
 }
