@@ -14,13 +14,13 @@ export default function Routes() {
   const location = useLocation();
   const transitions = useTransition(location, {
     from: {
-      opacity: 0, transform: 'translateY(50px)', position: 'absolute', left: '20px', right: '0',
+      opacity: 0, transform: 'translateY(50px)', position: 'absolute', left: '20px', right: '20px',
     },
     enter: {
-      opacity: 1, transform: 'translateY(0)', position: 'absolute', left: '20px', right: '0',
+      opacity: 1, transform: 'translateY(0)', position: 'absolute', left: '20px', right: '20px',
     },
     leave: {
-      opacity: 0, transform: 'translateY(50px)', position: 'absolute', left: '20px', right: '0',
+      opacity: 0, transform: 'translateY(50px)', position: 'absolute', left: '20px', right: '20px',
     },
   });
 
