@@ -6,8 +6,9 @@ import Home from './pages/Home';
 import Posts from './pages/Posts';
 import Categories from './pages/Categories';
 import Extensions from './pages/Extensions';
-import NewAdmin from './pages/NewAdmin';
-import EditAdmin from './pages/EditAdmin';
+import MyAccount from './pages/MyAccount';
+import NewAdmin from './pages/MyAccount/NewUser';
+import EditAdmin from './pages/MyAccount/EditUser';
 import NotFound from './pages/NotFound';
 
 export default function Routes() {
@@ -31,8 +32,9 @@ export default function Routes() {
         <Route path="/posts" component={Posts} />
         <Route path="/categories" component={Categories} />
         <Route path="/extensions" component={Extensions} />
-        <Route path="/newAdmin" exact component={NewAdmin} />
-        <Route path="/editAdmin/:id" component={EditAdmin} />
+        <Route path="/myAccount" component={MyAccount} />
+        <Route path="/newUser" exact component={NewAdmin} />
+        <Route path="/editUser/:id" component={EditAdmin} />
         <Route path="*" component={NotFound} />
       </Switch>
     </animated.div>

@@ -51,7 +51,7 @@ export default function Navbar({ isActive }) {
         <img src={Extension} alt="Extension Page" />
         <span>Extensions</span>
       </Link>
-      <Link to="/users">
+      <Link to="/myAccount">
         <img src={Peoples} alt="Peoples Page" />
         <span>Users</span>
       </Link>
