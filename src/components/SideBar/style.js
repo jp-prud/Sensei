@@ -5,6 +5,7 @@ export const Container = styled.div`
   min-width: 253px;
   padding: 20px;
   background: ${({ theme }) => theme.colors.backgroundDark};
+  position: relative;
 `;
 
 export const SideBarHeader = styled.div`
@@ -33,37 +34,46 @@ export const SideBarHeader = styled.div`
 `;
 
 export const User = styled.div`
-  margin-top: auto;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease-out;
+  position: fixed;
+  width: 100%;
+  max-width: 213px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
 
-  :hover {
-    background: rgba(255, 255, 255, 0.15);
-  }
-
-  img {
-    margin-right: 8px;
-  }
-
-  div {
+  a {
+    margin-top: auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
     display: flex;
-    flex-direction: column;
-    color: ${({ theme }) => theme.colors.white};
+    align-items: center;
+    transition: all 0.3s ease-out;
 
-    span {
-      font: 600 14px 'Inter';
-      letter-spacing: .75px;
+    :hover {
+      background: rgba(255, 255, 255, 0.15);
     }
 
-    span:last-child {
-      opacity: .5;
-      font: 500 10px 'Inter';
-      letter-spacing: .85px;
-      text-transform: lowercase;
+    img {
+      margin-right: 8px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      color: ${({ theme }) => theme.colors.white};
+
+      span {
+        font: 600 14px 'Inter';
+        letter-spacing: .75px;
+      }
+
+      span:last-child {
+        opacity: .5;
+        font: 500 10px 'Inter';
+        letter-spacing: .85px;
+        text-transform: lowercase;
+      }
     }
   }
 `;

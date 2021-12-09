@@ -30,16 +30,16 @@ export default function SideBar() {
 
       <Navbar />
 
-      <Link to="/user">
-        <User>
+      <User>
+        <Link to="/user">
           <img src={Avatar} alt="Avatar Icon" />
 
           <div>
             <span> Joao Pedro</span>
             <span> Developer </span>
           </div>
-        </User>
-      </Link>
+        </Link>
+      </User>
     </Container>
   );
 }
