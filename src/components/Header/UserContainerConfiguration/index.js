@@ -5,7 +5,7 @@ import ThemeSwitcher from '../../ThemeSwitcher';
 
 import { Container, Children } from './style';
 
-import UserIcon from '../../../assets/images/icons/avatar.svg';
+import UserIcon from '../../../assets/images/icons/Avatar.svg';
 
 export default function UserContainerConfiguration() {
   return (
