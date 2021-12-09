@@ -18,5 +18,6 @@ export const MainContainer = styled.main`
 `;
 
 export const Content = styled.div`
+  position: relative;
   padding: 20px;
 `;
