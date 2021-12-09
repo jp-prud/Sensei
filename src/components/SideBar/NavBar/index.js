@@ -20,7 +20,7 @@ export default function Navbar({ isActive }) {
         <img src={Home} alt="Home Page" />
         <span>Dashboard</span>
       </Link>
-      <Link to="/post">
+      <Link to="/posts">
         <img src={Post} alt="Post Page" />
         <span>Post</span>
       </Link>

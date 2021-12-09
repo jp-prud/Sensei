@@ -7,12 +7,26 @@ import {
 
 import Navbar from './NavBar';
 
+import Logo from '../../assets/images/Modular.svg';
 import Avatar from '../../assets/images/icons/sidebar/Avatar-sidebar.svg';
 
 export default function SideBar() {
   return (
     <Container>
-      <SideBarHeader />
+      <SideBarHeader>
+        <Link to="/">
+          <img src={Logo} alt="Modular - Estratégias Digitais" width="50px" />
+
+          <div>
+            <h1>
+              Modular
+            </h1>
+            <small>
+              Dashboard
+            </small>
+          </div>
+        </Link>
+      </SideBarHeader>
 
       <Navbar />
 

@@ -8,6 +8,28 @@ export const Container = styled.div`
 `;
 
 export const SideBarHeader = styled.div`
+  padding-bottom: 24px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  a {
+    display: flex;
+    align-items: center;
+    color: ${({ theme }) => theme.colors.white};
+
+    img {
+      margin-right: 8px;
+    }
+
+    h1 {
+      font: bold 20px 'Inter';
+      letter-spacing: 0.86px;
+    }
+
+    small {
+      font: 500 12px 'Inter';
+    }
+  }
 `;
 
 export const User = styled.div`
