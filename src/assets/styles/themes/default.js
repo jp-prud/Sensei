@@ -13,5 +13,6 @@ export default {
   },
   font: {
     title_h1: 'bold 32px/34px Inter',
+    body: '500 14px/34px Inter',
   },
 };

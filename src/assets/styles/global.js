@@ -20,14 +20,15 @@ export default createGlobalStyle`
     }
   }
 
-  html, body {
-    width: 100vw;
-    height: 100vh;
-  }
-
   body {
+    height: 100%;
+    width: 100%;
     font-size: 1rem;
     background: ${({ theme }) => theme.colors.background}
+  }
+
+  a {
+    text-decoration: none;
   }
 
   #root {
