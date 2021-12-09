@@ -7,7 +7,6 @@ import defaultTheme from '../../assets/styles/themes/default';
 
 import Header from '../Header';
 import SideBar from '../SideBar';
-import PageTitle from '../PageTitle';
 
 import { Wrapper, MainContainer, Content } from './style';
 
@@ -26,7 +25,6 @@ export default function App() {
             <Header />
 
             <Content>
-              <PageTitle title="Dashboard" />
               <Routes />
             </Content>
           </MainContainer>
