@@ -32,9 +32,9 @@ export default function Routes() {
         <Route path="/posts" component={Posts} />
         <Route path="/categories" component={Categories} />
         <Route path="/extensions" component={Extensions} />
-        <Route path="/myAccount" component={MyAccount} />
-        <Route path="/newUser" exact component={NewAdmin} />
-        <Route path="/editUser/:id" component={EditAdmin} />
+        <Route path="/myAccount" exact component={MyAccount} />
+        <Route path="/myAccount/newUser" exact component={NewAdmin} />
+        <Route path="/myAccount/editUser/:id" component={EditAdmin} />
         <Route path="*" component={NotFound} />
       </Switch>
     </animated.div>
