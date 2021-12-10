@@ -6,7 +6,7 @@ export const Form = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 3rem auto 0;
 `;
 
 export const FormHeader = styled.div`
@@ -29,4 +29,8 @@ export const FormBody = styled.form`
   padding: 40px;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.colors.white};
+
+  button {
+    margin-top: 1rem;
+  }
 `;
