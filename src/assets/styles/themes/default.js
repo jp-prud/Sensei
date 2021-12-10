@@ -8,11 +8,15 @@ export default {
     title: '#171717',
     gray: '#767676',
     primary: {
-      main: '#2F49D1',
+      light: '#0085e9',
+      main: '#006cea',
+      dark: '#2F49D1',
     },
   },
   font: {
-    title_h1: 'bold 32px/34px Inter',
+    title_h1: 'bold 64px/66px Inter',
+    title_h2: 'bold 48px/50px Inter',
+    title_h3: 'bold 32px/34px Inter',
     body: '500 14px/34px Inter',
   },
 };
