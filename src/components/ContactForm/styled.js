@@ -13,7 +13,7 @@ export const FormHeader = styled.div`
   text-align: center;
 
   h1 {
-    font: ${({ theme }) => theme.font.title_h1};
+    font: ${({ theme }) => theme.font.title_h3};
     color: ${({ theme }) => theme.colors.title};
   }
 
