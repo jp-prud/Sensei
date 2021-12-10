@@ -13,10 +13,10 @@ import Extension from '../../../assets/images/icons/sidebar/Extension.svg';
 import Peoples from '../../../assets/images/icons/sidebar/Peoples.svg';
 import Setting from '../../../assets/images/icons/sidebar/Setting.svg';
 
-export default function Navbar({ isActive }) {
+export default function Navbar() {
   return (
     <Container>
-      <Link to="/" isActive={isActive}>
+      <Link to="/">
         <img src={Home} alt="Home Page" />
         <span>Dashboard</span>
       </Link>
