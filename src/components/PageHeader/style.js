@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 
   h1 {
-    font: ${({ theme }) => theme.font.title_h1};
+    font: ${({ theme }) => theme.font.title_h3};
     letter-spacing: 1px;
     color: ${({ theme }) => theme.colors.title};
   }

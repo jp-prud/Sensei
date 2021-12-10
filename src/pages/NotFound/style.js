@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   h1 {
     margin-top: 89px;
-    font: ${({ theme }) => theme.font.title_h1};
+    font: ${({ theme }) => theme.font.title_h3};
   }
 
   small {
