@@ -6,12 +6,16 @@ export default {
     inputBackground: '#EFF0F6',
     placeholder: '#D6D7E3',
     title: '#171717',
+    border: '#EEEEEE',
+    label: '#B9B9B9',
     gray: '#767676',
+    info: '#5887FF',
     primary: {
       light: '#0085e9',
       main: '#006cea',
       dark: '#2F49D1',
     },
+    danger: '#F26464',
   },
   font: {
     title_h1: 'bold 64px/66px Inter',

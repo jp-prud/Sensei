@@ -6,6 +6,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth:
   }
 
   @media (max-width: 1080px) {
@@ -21,11 +22,11 @@ export default createGlobalStyle`
   }
 
   html {
-    height: 100vh;
+    height: 100%;
   }
 
   body {
-    height: 100%;
+    height: auto;
     width: 100%;
     font-size: 1rem;
     background: ${({ theme }) => theme.colors.background}
@@ -38,11 +39,12 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+    background: inherit;
     border: none;
     outline: none;
   }
 
   #root {
-    height: 100%;
+    height: auto;
   }
 `;
