@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Posts from './pages/Posts';
 import Categories from './pages/Categories';
 import Extensions from './pages/Extensions';
+import Users from './pages/Users';
 import MyAccount from './pages/MyAccount';
 import NewAdmin from './pages/MyAccount/NewUser';
 import EditAdmin from './pages/MyAccount/EditUser';
@@ -15,13 +16,13 @@ export default function Routes() {
   const location = useLocation();
   const transitions = useTransition(location, {
     from: {
-      opacity: 0, transform: 'translateY(50px)', position: 'absolute', left: '20px', right: '20px',
+      height: '100%', width: '100%', opacity: 0, transform: 'translateY(50px)', position: 'absolute', padding: '20px',
     },
     enter: {
-      opacity: 1, transform: 'translateY(0)', position: 'absolute', left: '20px', right: '20px',
+      height: '100%', width: '100%', opacity: 1, transform: 'translateY(0)', position: 'absolute', padding: '20px',
     },
     leave: {
-      opacity: 0, transform: 'translateY(50px)', position: 'absolute', left: '20px', right: '20px',
+      height: '100%', width: '100%', opacity: 0, transform: 'translateY(50px)', position: 'absolute', padding: '20px',
     },
   });
 
@@ -32,9 +33,10 @@ export default function Routes() {
         <Route path="/posts" component={Posts} />
         <Route path="/categories" component={Categories} />
         <Route path="/extensions" component={Extensions} />
-        <Route path="/myAccount" exact component={MyAccount} />
-        <Route path="/myAccount/newUser" exact component={NewAdmin} />
-        <Route path="/myAccount/editUser/:id" component={EditAdmin} />
+        <Route path="/users" exact component={Users} />
+        <Route path="/my-account" exact component={MyAccount} />
+        <Route path="/my-account/new-user" exact component={NewAdmin} />
+        <Route path="/my-account/edit-user/:id" component={EditAdmin} />
         <Route path="*" component={NotFound} />
       </Switch>
     </animated.div>
