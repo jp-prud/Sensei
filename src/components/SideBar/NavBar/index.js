@@ -49,11 +49,11 @@ export default function Navbar() {
       </Link>
       <Link to="/extensions">
         <img src={Extension} alt="Extension Page" />
-        <span>Extensions</span>
+        <span>Extensões</span>
       </Link>
-      <Link to="/myAccount">
+      <Link to="/users">
         <img src={Peoples} alt="Peoples Page" />
-        <span>Users</span>
+        <span>Usuários</span>
       </Link>
       <Link to="/settings">
         <img src={Setting} alt="Setting Page" />

@@ -14,7 +14,7 @@ export const Container = styled.nav`
     transition: all .3s ease-out;
 
     :hover {
-      opacity: 1
+      opacity: 1;
     }
 
     img {
