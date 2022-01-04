@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Form, FormHeader, FormBody } from './styled';
 
 import FormGroup from '../FormGroup';
 
-import Input from '../input';
-import Label from '../label';
-import Select from '../select';
-import Button from '../button';
+import Input from '../Input';
+import Label from '../Label';
+import Select from '../Select';
+import Button from '../Button';
 
 export default function ContactForm({ context }) {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
   return (
     <Form>
       <FormHeader>
@@ -25,33 +28,47 @@ export default function ContactForm({ context }) {
       <FormBody>
         <FormGroup>
           <Label>Name</Label>
-          <Input placeholder="Enter your name" typex="text" />
+          <Input
+            placeholder="Enter your name"
+            type="text"
+            onChange={(event) => setName(event.target.value)}
+            value={name}
+          />
         </FormGroup>
 
-        <FormGroup>
+        <FormGroup error="Email format is not allowed">
           <Label>Email</Label>
-          <Input placeholder="Enter your mail" typex="mail" />
+          <Input
+            placeholder="Enter your mail"
+            type="mail"
+            error
+            onChange={(event) => setEmail(event.target.target)}
+            value={email}
+          />
         </FormGroup>
 
         <FormGroup>
           <Label>Password</Label>
-          <Input placeholder="Enter your password" typex="password" />
+          <Input placeholder="Enter your password" type="password" />
         </FormGroup>
 
         <FormGroup>
           <Label>Phone</Label>
-          <Input placeholder="Enter your phone" typex="phone" />
+          <Input placeholder="Enter your phone" type="phone" />
         </FormGroup>
 
         <FormGroup>
           <Label>Company</Label>
           <Select>
-            <option value="1"> Modular </option>
+            <option value="1" selected> Modular </option>
+            <option value="2"> Modular 2 </option>
           </Select>
         </FormGroup>
 
         <FormGroup>
-          <Button> Connect </Button>
+          <Button>
+            {context.button}
+          </Button>
         </FormGroup>
       </FormBody>
     </Form>
