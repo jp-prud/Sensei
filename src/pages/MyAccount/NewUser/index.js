@@ -8,6 +8,7 @@ export default function NewUser() {
       <ContactForm context={{
         title: 'Get started',
         subtitle: 'Start creating the best possible user experience for you customers',
+        button: 'Sign up',
       }}
       />
     </>
