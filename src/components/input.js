@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export default styled.input`
   height: 44px;
@@ -10,11 +10,21 @@ export default styled.input`
   font-size: 1rem;
   background: ${({ theme }) => theme.colors.inputBackground};
 
-  :focus {
+  &:focus {
     border-color: ${({ theme }) => theme.colors.primary.main};
   }
 
   ::placeholder {
     color: ${({ theme }) => theme.colors.placeholder};
   }
+
+  ${({ theme, error }) => error && css`
+    border-color: ${theme.colors.danger} !important;
+    color: ${theme.colors.danger};
+
+    &:focus {
+      border-color: ${theme.colors.danger} !important;
+    }
+  `
+}
 `;
