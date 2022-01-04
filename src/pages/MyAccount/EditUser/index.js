@@ -1,9 +1,17 @@
 import React from 'react';
 
-import PageHeader from '../../../components/PageHeader';
+import ContactForm from '../../../components/ContactForm';
 
 export default function EditAdmin() {
   return (
-    <PageHeader title="Edit Admin" />
+    <>
+      <ContactForm
+        context={{
+          title: 'Edit User',
+          subtitle: 'Update your informations',
+          button: 'Update',
+        }}
+      />
+    </>
   );
 }
