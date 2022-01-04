@@ -2,10 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: auto;
+  max-height: 100vh;
   min-width: 253px;
   padding: 20px;
   background: ${({ theme }) => theme.colors.backgroundDark};
-  position: relative;
+  position: fixed;
+  overflow-y: auto;
+
+  @media (max-width: 980px) {
+    display: none;
+  }
 `;
 
 export const SideBarHeader = styled.div`
@@ -34,15 +40,11 @@ export const SideBarHeader = styled.div`
 `;
 
 export const User = styled.div`
-  position: fixed;
   width: 100%;
   max-width: 213px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
 
   a {
-    margin-top: auto;
+    margin-top: 100%;
     padding: 10px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;

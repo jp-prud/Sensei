@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  margin-bottom: 32px;
 
   h1 {
     font: ${({ theme }) => theme.font.title_h3};
