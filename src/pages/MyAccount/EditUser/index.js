@@ -1,11 +1,11 @@
 import React from 'react';
 
-import ContactForm from '../../../components/ContactForm';
+import UserForm from '../../../components/UserForm';
 
 export default function EditAdmin() {
   return (
     <>
-      <ContactForm
+      <UserForm
         context={{
           title: 'Edit User',
           subtitle: 'Update your informations',

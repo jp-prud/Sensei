@@ -1,11 +1,11 @@
 import React from 'react';
 
-import ContactForm from '../../../components/ContactForm';
+import UserForm from '../../../components/UserForm';
 
 export default function NewUser() {
   return (
     <>
-      <ContactForm context={{
+      <UserForm context={{
         title: 'Get started',
         subtitle: 'Start creating the best possible user experience for you customers',
         button: 'Sign up',
