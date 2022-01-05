@@ -28,16 +28,16 @@ export default function Users() {
 
           <div>
             <Select>
-              <option value="1">Últimos 7 dias</option>
+              <option value="1" defaultValue>Todas as Datas</option>
               <option value="2">Últimos 7 dias</option>
-              <option value="3">Últimos 15 dias</option>
-              <option value="4" selected>Todas as Datas</option>
+              <option value="3">Últimos 7 dias</option>
+              <option value="4">Últimos 15 dias</option>
             </Select>
 
             <Select>
-              <option value="1">Normal</option>
-              <option value="2">Premium</option>
-              <option value="3" selected>Todas os Planos</option>
+              <option value="1" defaultValue>Todas os Planos</option>
+              <option value="2">Normal</option>
+              <option value="3">Premium</option>
             </Select>
           </div>
         </ListFilter>
