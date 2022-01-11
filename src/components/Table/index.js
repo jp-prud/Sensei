@@ -9,7 +9,10 @@ import {
 
 import MoreItems from '../../assets/images/icons/MoreItems.svg';
 
-export default function Table({ header, rows }) {
+import formatPhone from '../../utils/formatPhone';
+import formatDate from '../../utils/formatDate';
+
+export default function Table({ header, content }) {
   return (
     <Container>
       <TableHeader>
@@ -20,14 +23,14 @@ export default function Table({ header, rows }) {
 
       <TableBody>
         {
-          rows.map((row) => (
-            <Row key={row.id}>
-              {Object.keys(row).map((key) => (
-                key !== 'id'
-                  && (
-                    <td>{row[key]}</td>
-                  )
-              ))}
+          content.map((client) => (
+            <Row key={client.id}>
+              <td>{client.name}</td>
+              <td>{client.email}</td>
+              <td>{formatPhone(client.phone)}</td>
+              <td>{formatDate(client.created_at)}</td>
+              <td>{client.store_name}</td>
+              <td>{client.plan_name}</td>
 
               <td>
                 <button type="button">
