@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 
@@ -23,6 +23,14 @@ export default function Users() {
   const [orderBy, setOrderBy] = useState('asc');
   const [searchTerm, setSearchTerm] = useState('');
 
+  const filteredClients = useMemo(() => (
+    clients.filter(
+      (client) => (
+        client.name.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
+    )
+  ), [clients, searchTerm]);
+
   useEffect(() => {
     fetch(`http://localhost:3001/clients?orderBy=${orderBy}`)
       .then(async (response) => {
@@ -41,12 +49,6 @@ export default function Users() {
   function handleChangeSearchTerm(event) {
     setSearchTerm(event.target.value);
   }
-
-  const filteredClients = clients.filter(
-    (client) => (
-      client.name.toLowerCase().includes(searchTerm.toLowerCase())
-    ),
-  );
 
   return (
     <>
