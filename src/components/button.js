@@ -29,4 +29,15 @@ export default styled.button`
         background: ${theme.colors.danger};
       }
     `}
+
+    ${({ theme, outline }) => outline && css`
+      background: transparent;
+
+      color: ${theme.colors.primary.main};
+      border: 1px solid ${theme.colors.primary.main};
+
+      &:hover {
+        color: ${theme.colors.primary.main};
+      }
+    `}
 `;
