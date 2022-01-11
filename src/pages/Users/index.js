@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 
@@ -7,26 +7,79 @@ import {
   ListFilter,
 } from './style';
 
+import ArrowIcon from '../../assets/images/icons/Arrow.svg';
+
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 import Table from '../../components/Table';
+import Button from '../../components/Button';
 
 import UserCard from './UserCard';
 // import Loader from '../../components/Loaders';
 // import Modal from '../../components/Modal';
 
 export default function Users() {
+  const [clients, setClients] = useState([]);
+  const [orderBy, setOrderBy] = useState('asc');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    fetch(`http://localhost:3001/clients?orderBy=${orderBy}`)
+      .then(async (response) => {
+        const json = await response.json();
+        setClients(json);
+      })
+      .catch((error) => `error: ${error}`);
+  }, [orderBy]);
+
+  function handleToggleOrderBy() {
+    setOrderBy((prevState) => (
+      prevState === 'asc' ? 'desc' : 'asc'
+    ));
+  }
+
+  function handleChangeSearchTerm(event) {
+    setSearchTerm(event.target.value);
+  }
+
+  const filteredClients = clients.filter(
+    (client) => (
+      client.name.toLowerCase().includes(searchTerm.toLowerCase())
+    ),
+  );
+
   return (
     <>
-      <PageHeader title="Todos os usuários" />
+      <PageHeader
+        title={
+          `
+          ${filteredClients.length}
+          ${filteredClients.length === 1 ? 'cliente cadastrado' : 'clientes cadastrados'}`
+        }
+      />
       {/* <Loader /> */}
       {/* <Modal danger /> */}
 
       <List>
-        <ListFilter>
-          <Input type="text" placeholder="Buscar pelo nome:" />
+        <ListFilter orderBy={orderBy}>
+          <Input
+            type="text"
+            placeholder="Pesquise pelo numero:"
+            onChange={(event) => handleChangeSearchTerm(event)}
+            value={searchTerm}
+          />
 
           <div>
+            <Button
+              type="button"
+              onClick={() => handleToggleOrderBy()}
+              outline
+            >
+              Nome
+
+              <img src={ArrowIcon} alt="Arrow Icon" />
+            </Button>
+
             <Select>
               <option value="1" defaultValue>Todas as Datas</option>
               <option value="2">Últimos 7 dias</option>
@@ -48,26 +101,7 @@ export default function Users() {
               header={[
                 'Nome', 'Email', 'Telefone', 'Criado em:', 'Loja', 'Plano', 'Ações',
               ]}
-              rows={[
-                {
-                  id: '1',
-                  name: 'Joao Pedro',
-                  email: 'joao@email.com',
-                  phone: '123-456-1234',
-                  date: '2017-01-91',
-                  company: 'Modular',
-                  plan: 'Pro',
-                },
-                {
-                  id: '2',
-                  name: 'Clara Luiza',
-                  email: 'joao@email.com',
-                  phone: '123-456-1234',
-                  date: '2017-01-91',
-                  company: 'Modular',
-                  plan: 'Pro',
-                },
-              ]}
+              content={filteredClients}
             />
           )}
 

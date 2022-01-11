@@ -24,6 +24,24 @@ export const ListFilter = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    button {
+      display: flex;
+      align-items: center;
+      border: none;
+
+      &:hover {
+        color: ${({ theme }) => theme.colors.primary.main};
+        background-color: #FFF;
+      }
+
+      img {
+        display: block;
+        margin-left: 8px;
+        transform: ${({ orderBy }) => (orderBy === 'asc' ? 'rotate(90deg)' : 'rotate(-90deg)')};
+        transition: transform 0.2s ease-in;
+      }
+    }
+
     select {
       max-width: 185px;
 
