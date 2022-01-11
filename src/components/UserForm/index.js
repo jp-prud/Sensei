@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
+import useErrors from '../../hooks/useErrors';
+
 import isEmailValid from '../../utils/isEmailValid';
+import formatPhone from '../../utils/formatPhone';
 
 import { Form, FormHeader, FormBody } from './styled';
 
@@ -17,69 +20,57 @@ export default function UserForm({ context }) {
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
   const [company, setCompany] = useState('');
-  const [errors, setErrors] = useState([]);
 
-  const handleChangeName = (event) => {
+  const {
+    errors,
+    appendNewError,
+    removeErrors,
+    getMessageErrorByFieldName,
+  } = useErrors();
+
+  const formIsValid = (name && errors.length === 0);
+
+  const handleNameChange = (event) => {
     setName(event.target.value);
 
     if (!event.target.value) {
-      setErrors((prevState) => [
-        ...prevState,
-        { field: 'name', message: 'O nome é obrigatório' },
-      ]);
+      appendNewError({ field: 'name', message: 'O nome é obrigatório' });
     } else {
-      setErrors((prevState) => prevState.filter(
-        (error) => error.field !== 'name',
-      ));
+      removeErrors('name');
     }
   };
 
-  const handleChangeEmail = (event) => {
+  const handleEmailChange = (event) => {
     setEmail(event.target.value);
 
     if (event.target.value && !isEmailValid(event.target.value)) {
-      const errorAlreadyExist = errors.find((error) => error.field === 'email');
-
-      if (errorAlreadyExist) {
-        return;
-      }
-
-      setErrors((prevState) => [
-        ...prevState,
-        { field: 'email', message: 'E-mail inválido' },
-      ]);
+      appendNewError({ field: 'email', message: 'E-mail inválido' });
     } else {
-      setErrors((prevState) => prevState.filter(
-        (error) => error.field !== 'email',
-      ));
+      removeErrors('email');
     }
   };
 
-  const handleChangePassword = (event) => {
+  const handlePasswordChange = (event) => {
     setPassword(event.target.value);
 
     if (!event.target.value) {
-      setErrors((prevState) => [
-        ...prevState,
-        { field: 'password', message: 'A senha é obrigatória' },
-      ]);
+      appendNewError({ field: 'password', message: 'A senha é obrigatória' });
     } else {
-      setErrors((prevState) => prevState.filter(
-        (error) => error.field !== 'password',
-      ));
+      removeErrors('password');
     }
   };
 
-  const getMessageErrorByFieldName = (fieldName) => errors.find(
-    (error) => error.field === fieldName,
-  )?.message;
+  const handlePhoneChange = (event) => {
+    const formatedPhone = formatPhone(event.target.value);
+    setPhone(formatedPhone);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={() => handleSubmit} noValidate>
       <FormHeader>
         <h1>
           {context.title}
@@ -96,9 +87,9 @@ export default function UserForm({ context }) {
         >
           <Label>Name</Label>
           <Input
-            placeholder="Enter your name"
+            placeholder="Enter your name *"
             type="text"
-            onChange={(handleChangeName)}
+            onChange={(handleNameChange)}
             value={name}
             error={getMessageErrorByFieldName('name')}
           />
@@ -110,8 +101,8 @@ export default function UserForm({ context }) {
           <Label>Email</Label>
           <Input
             placeholder="Enter your mail"
-            type="mail"
-            onChange={handleChangeEmail}
+            type="email"
+            onChange={handleEmailChange}
             value={email}
             error={getMessageErrorByFieldName('email')}
           />
@@ -124,7 +115,7 @@ export default function UserForm({ context }) {
           <Input
             placeholder="Enter your password"
             type="password"
-            onChange={handleChangePassword}
+            onChange={handlePasswordChange}
             value={password}
             error={getMessageErrorByFieldName('password')}
           />
@@ -135,8 +126,9 @@ export default function UserForm({ context }) {
           <Input
             placeholder="Enter your phone"
             type="phone"
-            onChange={(event) => setPhone(event.target.value)}
+            onChange={handlePhoneChange}
             value={phone}
+            maxLength="15"
           />
         </FormGroup>
 
@@ -153,7 +145,9 @@ export default function UserForm({ context }) {
         </FormGroup>
 
         <FormGroup>
-          <Button>
+          <Button
+            disabled={!formIsValid}
+          >
             {context.button}
           </Button>
         </FormGroup>
