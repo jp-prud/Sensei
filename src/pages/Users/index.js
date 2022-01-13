@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
-import PageHeader from '../../components/PageHeader';
-
 import {
   List,
   ListFilter,
@@ -13,15 +11,18 @@ import Input from '../../components/Input';
 import Select from '../../components/Select';
 import Table from '../../components/Table';
 import Button from '../../components/Button';
-
+import PageHeader from '../../components/PageHeader';
+import Loader from '../../components/Loaders';
 import UserCard from './UserCard';
-// import Loader from '../../components/Loaders';
 // import Modal from '../../components/Modal';
+
+import UsersService from '../../services/UsersService';
 
 export default function Users() {
   const [clients, setClients] = useState([]);
   const [orderBy, setOrderBy] = useState('asc');
   const [searchTerm, setSearchTerm] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   const filteredClients = useMemo(() => (
     clients.filter(
@@ -32,12 +33,23 @@ export default function Users() {
   ), [clients, searchTerm]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/clients?orderBy=${orderBy}`)
-      .then(async (response) => {
-        const json = await response.json();
-        setClients(json);
-      })
-      .catch((error) => `error: ${error}`);
+    setIsLoading(true);
+
+    async function getUsers() {
+      try {
+        setIsLoading(true);
+
+        const listUsers = await UsersService.listUsers(orderBy);
+
+        setClients(listUsers);
+      } catch (error) {
+        throw new Error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    getUsers();
   }, [orderBy]);
 
   function handleToggleOrderBy() {
@@ -52,6 +64,9 @@ export default function Users() {
 
   return (
     <>
+      {isLoading && <Loader />}
+      {/* <Modal danger /> */}
+
       <PageHeader
         title={
           `
@@ -59,8 +74,6 @@ export default function Users() {
           ${filteredClients.length === 1 ? 'cliente cadastrado' : 'clientes cadastrados'}`
         }
       />
-      {/* <Loader /> */}
-      {/* <Modal danger /> */}
 
       <List>
         <ListFilter orderBy={orderBy}>

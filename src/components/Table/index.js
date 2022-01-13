@@ -16,29 +16,29 @@ export default function Table({ header, content }) {
   return (
     <Container>
       <TableHeader>
-        { header.map((children) => (
-          <td key={children.length}>{children}</td>
+        { header.map((element) => (
+          <td key={element.length}>{element}</td>
         ))}
       </TableHeader>
 
       <TableBody>
         {
-          content.map((client) => (
-            <Row key={client.id}>
-              <td>{client.name}</td>
-              <td>{client.email}</td>
-              <td>{formatPhone(client.phone)}</td>
-              <td>{formatDate(client.created_at)}</td>
-              <td>{client.store_name}</td>
-              <td>{client.plan_name}</td>
+        content.map((client) => (
+          <Row key={client.id}>
+            <td>{client.name}</td>
+            <td>{client.email}</td>
+            <td>{formatPhone(client.phone)}</td>
+            <td>{formatDate(client.created_at)}</td>
+            <td>{client.store_name}</td>
+            <td>{client.plan_name}</td>
 
-              <td>
-                <button type="button">
-                  <img src={MoreItems} alt="Action Button" />
-                </button>
-              </td>
-            </Row>
-          ))
+            <td>
+              <button type="button">
+                <img src={MoreItems} alt="Action Button" />
+              </button>
+            </td>
+          </Row>
+        ))
         }
       </TableBody>
     </Container>
