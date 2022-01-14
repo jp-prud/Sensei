@@ -43,7 +43,7 @@ export default function Users() {
 
         setClients(listUsers);
       } catch (error) {
-        throw new Error(error);
+        console.log(error);
       } finally {
         setIsLoading(false);
       }
