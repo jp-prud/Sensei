@@ -9,6 +9,12 @@ export default styled.button`
   transition: all .3s ease-in;
   font-size: 1rem;
 
+    a {
+      display: inline;
+      vertical-align: middle;
+      padding: 0 16px;
+    }
+
     &:hover {
       background: ${({ theme }) => theme.colors.primary.light};
     }
