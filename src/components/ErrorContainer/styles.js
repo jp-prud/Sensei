@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
 
   .details {
-    margin-left: 24px;
+    margin-left: 24px
 
     h1 {
       color: ${({ theme }) => theme.colors.danger};
