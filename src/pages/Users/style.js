@@ -1,6 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export const Container = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  ${({ hasError }) => hasError && css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  `}
+`;
 
 export const List = styled.div`
+  width: 100%;
+
   table {
     width: 100%;
     text-align: center;
