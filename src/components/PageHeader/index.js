@@ -5,16 +5,16 @@ import { Container, Button } from './style';
 
 import PlusIcon from '../../assets/images/icons/Plus.svg';
 
-export default function PageHeader(props) {
+export default function PageHeader({ title, button, redirectTo }) {
   return (
-    <Container>
+    <Container className="page-header-title">
       <h1>
-        {props.title}
+        {title}
       </h1>
 
-      {props.button && (
+      {button && (
         <Button>
-          <Link to="extension/addExtension">
+          <Link to={redirectTo}>
             <img src={PlusIcon} alt="Adicionar" />
             <span> Adicionar </span>
           </Link>
