@@ -16,9 +16,10 @@ import Table from '../../components/Table';
 import Button from '../../components/Button';
 import PageHeader from '../../components/PageHeader';
 import Loader from '../../components/Loaders';
-import UserCard from './UserCard';
-import ContainerError from '../../components/ContainerError';
+import UserCard from '../../components/UserCard';
+import ErrorContainer from '../../components/ErrorContainer';
 import EmptyContainer from '../../components/EmptyContainer';
+import SearchErrorContainer from '../../components/SearchErrorContainer';
 // import Modal from '../../components/Modal';
 
 import UsersService from '../../services/UsersService';
@@ -76,15 +77,15 @@ export default function Users() {
       {isLoading && <Loader />}
 
       {hasError && (
-        <ContainerError
-          message="Ocorreu um erro ao obter os Usuários"
+        <ErrorContainer
+          message="Ocorreu um erro ao obter os Usuários."
         >
           <Button
             onClick={() => getUsers()}
           >
             Tente Novamente
           </Button>
-        </ContainerError>
+        </ErrorContainer>
       )}
 
       {(!hasError && users.length === 0) && (
@@ -141,9 +142,7 @@ export default function Users() {
             </ListFilter>
 
             {(users.length > 0 && filteredUsers.length === 0) && (
-              <h1>
-                {`Nenhum resultado foi encontrado para: "${searchTerm}".`}
-              </h1>
+              <SearchErrorContainer context={searchTerm} />
             )}
 
             {(users.length > 0 && filteredUsers.length > 0) && (
