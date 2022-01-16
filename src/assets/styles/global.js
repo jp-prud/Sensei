@@ -26,7 +26,7 @@ export default createGlobalStyle`
   }
 
   body {
-    height: auto;
+    height: 100%;
     width: 100%;
     font-size: 1rem;
     background: ${({ theme }) => theme.colors.background}
@@ -45,6 +45,6 @@ export default createGlobalStyle`
   }
 
   #root {
-    height: auto;
+    height: 100%;
   }
 `;

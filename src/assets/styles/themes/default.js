@@ -6,7 +6,7 @@ export default {
     inputBackground: '#EFF0F6',
     placeholder: '#D6D7E3',
     title: '#171717',
-    border: '#EEEEEE',
+    border: '#BCBCBC',
     label: '#B9B9B9',
     gray: '#767676',
     info: '#5887FF',
