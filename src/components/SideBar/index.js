@@ -31,7 +31,7 @@ export default function SideBar() {
       <Navbar />
 
       <User>
-        <Link to="/user">
+        <Link to="/my-account">
           <img src={Avatar} alt="Avatar Icon" />
 
           <div>
