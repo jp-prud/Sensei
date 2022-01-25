@@ -25,12 +25,43 @@ export default function Table({ header, content }) {
         {
         content.map((client) => (
           <Row key={client.id}>
-            <td>{client.name}</td>
-            <td>{client.email}</td>
-            <td>{formatPhone(client.phone)}</td>
-            <td>{formatDate(client.created_at)}</td>
-            <td>{client.store_name}</td>
-            <td>{client.plan_name}</td>
+            <td>
+              <span>
+                {client.name}
+              </span>
+            </td>
+
+            <td>
+              <span>
+                {client.email}
+              </span>
+            </td>
+
+            <td>
+              <span>
+                {formatPhone(client.phone)}
+              </span>
+            </td>
+
+            <td>
+              <span>
+                {formatDate(client.created_at)}
+              </span>
+            </td>
+
+            <td
+              className="store"
+            >
+              <span>
+                {client.store_name}
+              </span>
+            </td>
+
+            <td>
+              <span>
+                {client.plan_name}
+              </span>
+            </td>
 
             <td>
               <button type="button">
