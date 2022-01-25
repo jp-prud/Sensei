@@ -157,7 +157,12 @@ export default function Users() {
                 )}
 
                 {window.innerWidth < 780 && (
-                  <UserCard />
+                  <>
+                    {(filteredUsers.map((user) => (
+                      <UserCard user={user} />
+                    ))
+                    )}
+                  </>
                 )}
               </>
             )}

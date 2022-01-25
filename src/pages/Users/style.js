@@ -65,4 +65,18 @@ export const ListFilter = styled.div`
       }
     }
   }
+
+  @media (max-width: 780px) {
+    flex-wrap: wrap;
+
+    input {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    div {
+      width: 100%;
+      margin-top: 16px;
+    }
+  }
 `;
