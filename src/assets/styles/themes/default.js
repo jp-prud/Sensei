@@ -18,9 +18,9 @@ export default {
     danger: '#F26464',
   },
   font: {
-    title_h1: 'bold 64px/66px Inter',
-    title_h2: 'bold 48px/50px Inter',
-    title_h3: 'bold 32px/34px Inter',
-    body: '500 14px/34px Inter',
+    title_h1: 'bold 4rem/4.125rem Inter',
+    title_h2: 'bold 3rem/3.125rem Inter',
+    title_h3: 'bold 2rem/2.125rem Inter',
+    body: '500 0.875rem/2.125rem Inter',
   },
 };
