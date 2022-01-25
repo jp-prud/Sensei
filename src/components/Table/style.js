@@ -8,9 +8,9 @@ export const Container = styled.table`
 
 export const TableHeader = styled.thead`
   height: 48px;
-  font: 500 14px 'Inter';
+  font: 700 14px 'Inter';
   color: ${({ theme }) => theme.colors.gray};
-  `;
+`;
 
 export const TableBody = styled.tbody`
   background-color: ${({ theme }) => theme.colors.white};
@@ -21,8 +21,23 @@ export const Row = styled.tr`
 
   td {
     height: 64px;
-    font: 500 12px 'Inter';
-    letter-spacing: -0.3px;
-    color: ${({ theme }) => theme.colors.gray};
+
+    &.store {
+      span {
+        background: rgba(0, 133, 233, .3);
+        color: ${({ theme }) => theme.colors.primary.main};
+        display: inline;
+        margin: 0 auto;
+        padding: 6px 8px;
+        border-radius: 4px;
+      }
+    }
+
+    span{
+      font: 500 12px 'Inter';
+      letter-spacing: -0.3px;
+      color: ${({ theme }) => theme.colors.gray};
+    }
+
   }
 `;
